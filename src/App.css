@@ -1,38 +1,348 @@
+@import url(//db.onlinewebfonts.com/c/783dd6c2d08bdc67012a0eec73fc1702?family=80sPXLW00-Thin);
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Card {
+  border-radius: 1em;
+  border: 2px solid white;
+  transform-style: preserve-3d;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-box-shadow: 0px 0px 400px 4px #b1247b;
+  animation: Spin 30s ease-in-out forwards;
+  animation-iteration-count: infinite;
+  transition: 2s;
+}
+
+@-moz-document url-prefix() {
+  .Card {
+    backface-visibility:hidden;
+  }
+  .CardBack {
+    box-shadow: 0px 0px 400px 4px #b1247b;
+    -webkit-box-shadow: 0px 0px 400px 4px #b1247b;
+  }
+}
+
+.Card:hover {
+  transform: rotate3d(0.05,1,0,180deg)
+}
+
+@keyframes Spin {
+  0% {transform: rotate3d(0,0,0,0deg);}
+  6% {transform: rotate3d(0,0,0,0deg);}
+  47% { transform: rotate3d(0.1,1,0,180deg); }
+  53% { transform: rotate3d(0.1,1,0,180deg); }
+  94% { transform: rotate3d(0.2,1,0,360deg); }
+  100% { transform: rotate3d(0.2,1,0,360deg); }
+}
+
+.CardBack { 
+  position: absolute;
+  border-radius: 1em;
+  height: 800px;
+  width: 800px;
+  background-color: #202020;
+  transform: rotateY(180deg);
+  border: 2px solid white;
+  font-family: "80sPXLW00-Thin";
+  backface-visibility:hidden;
+}
+
+.Music {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 1em;
+}
+
+.CardBack {
+  display: grid;
+  justify-content: center;
+  align-content: center;
   color: white;
+  text-align: center;
+  gap: 12px
 }
 
-.App-link {
-  color: #61dafb;
+.CardBack h1 {
+  font-size: 48px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CardBack h2 {
+  font-size: 24px;
+}
+
+.GitHub {
+  cursor: pointer;
+  padding-top: 1em;
+  width: 2em;
+}
+
+.Support {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  line-height: 1.5em;
+}
+
+.VaporBox {
+  width: 800px;
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1em;
+  backface-visibility:hidden;
+}
+
+.PageDivider {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.RainContainer {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.RainDrop {
+  width: 4px;
+  height: 32px;
+  position: absolute;
+  top: -80px;
+  transform: rotate(45deg);
+  animation: Rain 1s linear forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes Rain {
+  from {transform: translateY(0) translateX(0) rotate(-45deg);}
+  to { transform: translateY(960px) translateX(960px) rotate(-45deg); }
+}
+
+.Top {
+  height: calc(1600px / 3);
+  background-color: #380a36;
+}
+
+.TopGradient {
+  z-index: 2;
+  height: calc(1600px / 3);
+  position: absolute;
+  top:0px;
+  width: 800px;
+  background: linear-gradient(rgba(0,0,0,0), rgb(177, 36, 123, 0.25));
+}
+
+.Skyline {
+  bottom:  calc(800px / 3);
+  right: 200px;
+  width: 400px;
+  filter: invert();
+  z-index: 2;
+  position: absolute;
+  
+}
+
+.Mountain1 {
+  bottom:  calc(800px / 3);
+  right: 0px;
+  width: 240px;
+  z-index: 2;
+  position: absolute;
+}
+
+.Mountain2 {
+  bottom:  calc(800px / 3);
+  left: 0px;
+  width: 240px;
+  z-index: 1;
+  position: absolute;
+}
+
+.Mountain3 {
+  bottom:  calc(800px / 3);
+  left: -168px;
+  width: 240px;
+  z-index: 1;
+  position: absolute;
+}
+
+.Mountain4 {
+  bottom:  calc(800px / 3);
+  right: -168px;
+  width: 240px;
+  z-index: 1;
+  position: absolute;
+}
+
+.MountainBG1 {
+  z-index: -1;
+  bottom:  calc(800px / 3);
+  opacity: 0.6;
+  right: 152px;
+  width: 240px;
+  z-index: 1;
+  position: absolute;
+}
+
+.MountainBG2 {
+  z-index: -1;
+  bottom:  calc(800px / 3);
+  opacity: 0.6;
+  left:  64px;
+  width: 240px;
+  z-index: 1;
+  position: absolute;
+}
+
+
+.Sun {
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(rgb(255, 142, 12), rgb(255, 0, 119));
+  border-radius: 160px;
+  position: absolute;
+  top: calc( 400px - 160px);
+  left: calc( 400px - 160px);
+  -webkit-box-shadow: 0px 0px 400px 4px #b1247b;
+  overflow: hidden;
+}
+
+.SunLine1 {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  height: 5%;
+  background-color: #380a36;
+}
+.SunLine2 {
+  position: absolute;
+  bottom: 7%;
+  width: 100%;
+  height: 5%;
+  background-color: #380a36;
+}
+.SunLine3 {
+  position: absolute;
+  bottom: 14%;
+  width: 100%;
+  height: 4%;
+  background-color: #380a36;
+}
+.SunLine4 {
+  position: absolute;
+  bottom: 22%;
+  width: 100%;
+  height: 4%;
+  background-color: #380a36;
+}
+.SunLine5 {
+  position: absolute;
+  bottom: 30%;
+  width: 100%;
+  height: 4%;
+  background-color: #380a36;
+}
+.SunLine6 {
+  position: absolute;
+  bottom: 39%;
+  width: 100%;
+  height: 3%;
+  background-color: #380a36;
+}
+
+.Mid {
+  z-index: 4;
+  height: 0px;
+  background-color: DeepPink;
+  -webkit-box-shadow: 
+    0px 0px 64px 2px DeepPink,
+    0px 0px 16px 2px DeepPink,
+    0px 0px 8px 2px DeepPink,
+    0px 0px 4px 2px DeepPink, 
+    0px 0px 4px 1px DeepPink;
+  box-shadow:
+    0px 0px 64px 2px DeepPink,
+    0px 0px 16px 2px DeepPink,
+    0px 0px 8px 2px DeepPink,
+    0px 0px 4px 2px DeepPink, 
+    0px 0px 4px 1px DeepPink;
+}
+
+.Bot {
+  z-index: 3;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: calc(800px / 3);
+  background: linear-gradient(rgb(40, 0, 60), rgb(40, 0, 30));
+}
+
+.BotBackground {
+  background-color: black;
+  position: absolute;
+  bottom: 0px;
+  /* opacity: 1; */
+  height: calc(800px / 3);
+  width: 800px;
+  z-index: 0;
+}
+
+.VerticalLine {
+  z-index: 1;
+  transform-origin: top left;
+  width: 0px;
+  height: calc(800px);
+  -webkit-box-shadow: 
+    0px 0px 4px 2px DeepPink, 
+    0px 0px 4px 1px DeepPink,
+    0px 0px 0.0625vw 0.5px DeepPink;
+  box-shadow:
+    0px 0px 4px 2px DeepPink, 
+    0px 0px 4px 1px DeepPink,
+    0px 0px 0.0625vw 0.5px DeepPink;
+}
+
+.HorizontalLine {
+  z-index: 1;
+  position: absolute;
+  transform-origin: top left;
+  width: calc(800px);
+  height: 0px;
+  -webkit-box-shadow: 
+    /* 0px 0px 8px 0.25vw aqua, */
+    0px 0px 4px 2px DeepPink, 
+    0px 0px 4px 1px DeepPink,
+    0px 0px 0.0625vw 0.5px DeepPink;
+  box-shadow:
+    /* 0px 0px 8px 0.25vw aqua, */
+    0px 0px 4px 2px DeepPink, 
+    0px 0px 4px 1px DeepPink,
+    0px 0px 0.0625vw 0.5px DeepPink;
+    animation: GoDown 4s cubic-bezier(.8,0,1,1) forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes GoDown {
+  from {transform: translateY(0);}
+  to { transform: translateY(calc(800px / 3));}
+}
+
+.Lines {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  height: calc(800px / 3);
+  width: 800px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(107, 5, 82, 0.5));
 }

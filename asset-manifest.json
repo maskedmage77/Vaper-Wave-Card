@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Vaper-Wave-Card/static/css/main.2f157d93.css",
-    "main.js": "/Vaper-Wave-Card/static/js/main.c178d4fe.js",
+    "main.css": "/Vaper-Wave-Card/static/css/main.8c5a5a79.css",
+    "main.js": "/Vaper-Wave-Card/static/js/main.9a2b97a8.js",
     "index.html": "/Vaper-Wave-Card/index.html",
-    "main.2f157d93.css.map": "/Vaper-Wave-Card/static/css/main.2f157d93.css.map",
-    "main.c178d4fe.js.map": "/Vaper-Wave-Card/static/js/main.c178d4fe.js.map"
+    "main.8c5a5a79.css.map": "/Vaper-Wave-Card/static/css/main.8c5a5a79.css.map",
+    "main.9a2b97a8.js.map": "/Vaper-Wave-Card/static/js/main.9a2b97a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f157d93.css",
-    "static/js/main.c178d4fe.js"
+    "static/css/main.8c5a5a79.css",
+    "static/js/main.9a2b97a8.js"
   ]
 }
